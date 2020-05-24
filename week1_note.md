@@ -42,7 +42,20 @@
     * A_t: the action that we select on time-step t
     * A_t is the greedy action with probability one minus epsilon or is a random action with probability epsilon
 * Understand optimistic initial values
-* Describe the benefits of optimistic initial values for early exploration
-* Explain the criticisms of optimistic initial values
+  * The doctor would continue this way, always assuming the treatments are maximally effective, until shown that the estimated values need to be corrected.
+  * Now, our doctor optimistically assumes that each treatment is highly effective before running the trial.
+* Describe the **benefits** of optimistic initial values for early exploration
+  * From this example, we can see that using optimistic initial values encourages exploration early in learning. The doctor tried all three of the treatments in the first three time steps, and continued to try all treatments afterwards
+* Explain the **criticisms** of optimistic initial values
+  * In early learning, the optimistic agent performs worse because it explores more. Its exploration decreases with time, because the optimism and its estimates washes out with more samples.
+  * One limitation is that **optimistic initial values only drive exploration early in learning,** this means agents will not continue exploring after some time.
+  * They are not very suitble for nonstationary problem: For example, one of the action values may change after some number of time steps. An optimistic agent may have already settled on a particular action, and will not notice that a different action is better now. 
+  * Another potential limitation is that we may not always know how to set the optimistic initial values, because in practice we may not know the maximal reward
 * Describe the upper confidence bound action selection method
-* Define optimism in the face of uncertainty
+  * ![imgae](/IMG/UCB.png)
+    * we will select the action that has the highest estimated value plus our upper-confidence bound exploration term.
+    * The C parameter as a user-specified parameter that controls the amount of exploration.
+    * ![image](/IMG/UCB_explore_term.png) Let's say we've taken 10,000 steps so far. Imagine we've selected action A 5,000 times. The uncertainty term here will be 0.043 times the constant C. If instead we had only selected action A 100 times, the uncertainty term would be 10 times larger.
+* Define optimism in the face of **uncertainty**
+  * If we are uncertain about something, we should optimistically assume that it is good
+  * For instance, say we have these three actions with associated uncertainties, our agent has no idea which is best. So it optimistically picks the action that has the highest upper bound.
