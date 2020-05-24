@@ -10,22 +10,37 @@
     * https://blog.csdn.net/pouqiyu5090/article/details/84898609 
     * https://zhuanlan.zhihu.com/p/30822777
 * Define action-values
-* The value of an action is the expected reward when that action is taken:
+  * The **value** of an action is the **expected reward** when that action is taken: ![image](IMG/action_value.png)
 * Define reward
 
 
 **Lesson 2: What to Learn? Estimating Action Values**
 * Define action-value estimation methods
+  * $q*(a)$ in the above formula is **unknow**, then we estimate it.
+  * Understand a simple online sample-average action-value estimation method: ![image](/IMG/ac_estimation.png)
 * Define exploration and exploitation
+  * *Exploration* allows the agent to improve his knowledge about each action for long-term benefit. By improving the accuracy of the estimated action values, the agent can make more informed decisions in the future
+  * *Exploitation* exploits the agent's current estimated values for short-term benefit. It chooses the greedy action to try to get the most reward. But by being greedy with respect to estimated values, may not actually get the most reward. 
 * Select actions greedily using an action-value function
+  *  The greedy action is the action that currently has the largest estimated value. Selecting the greedy action means the agent is exploiting its current knowledge. It is trying to get the most reward it can right now. We can compute the greedy action by taking the argmax of our estimated values
+  *  Alternatively, the agent may choose to explore by choosing a non-greedy action. The agent would sacrifice immediate reward hoping to gain more information about the other actions.
 * Define online learning
-* Understand a simple online sample-average action-value estimation method
-* Define the general online update equation
+* Define the general online update equation:![imgae](/IMG/general_update_rule.png)
+  * Q1 -> initial action value
+  * New reward is our target
+  * StepSize is a functon n from 0 to 1
 * Understand why we might use a constant stepsize in the case of non-stationarity
-
+  * Non-stationarity problem:  What if one of the treatments was more effective under certain conditions? Specifically, let's say the treatment B is more effective during the winter months.
+  * These problems are like the bandit problems  before, **except** the distribution of rewards **changes** with time. The doctor is **unaware** of this change but would like to adapt to it. 
+  * One option is to use a fixed step size. If Alpha_n(StepSize) is constant like 0.1, then the most recent rewards affect the estimate more than older rewards.
+ 
 
 **Lesson 3: Exploration vs. Exploitation Tradeoff**
-* Compare the short-term benefits of exploitation and the long-term benefits of exploration
+* Compare the short-term benefits of *exploitation* and the long-term benefits of *exploration*
+  * Choose randomly?
+  * $epsilon$ greedy -> eps refers to the **probability** of choosing to exolore ![image](/IMG/eps.png)
+    * A_t: the action that we select on time-step t
+    * A_t is the greedy action with probability one minus epsilon or is a random action with probability epsilon
 * Understand optimistic initial values
 * Describe the benefits of optimistic initial values for early exploration
 * Explain the criticisms of optimistic initial values
