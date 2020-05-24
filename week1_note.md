@@ -56,6 +56,7 @@
     * we will select the action that has the highest estimated value plus our upper-confidence bound exploration term.
     * The C parameter as a user-specified parameter that controls the amount of exploration.
     * ![image](/IMG/UCB_explore_term.png) Let's say we've taken 10,000 steps so far. Imagine we've selected action A 5,000 times. The uncertainty term here will be 0.043 times the constant C. If instead we had only selected action A 100 times, the uncertainty term would be 10 times larger.
+    * 每次行为a被选中，则N_t(a)增加，不确定项就会减小，不确定性会下降。另一方面，每次其它行为被选中，t增加了但N_t(a)并没有，a不确定的估计就会增大。使用自然对数因其增长随时间减小，但却是无界的；所有的行为都逐渐会被选中，不过随着时间的增长等待的时间会更长，因此对于那些价值估计更低或已被更多次选择的行为被选中的频率就会更低。
 * Define optimism in the face of **uncertainty**
   * If we are uncertain about something, we should optimistically assume that it is good
   * For instance, say we have these three actions with associated uncertainties, our agent has no idea which is best. So it optimistically picks the action that has the highest upper bound.
