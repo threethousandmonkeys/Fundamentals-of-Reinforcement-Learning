@@ -35,12 +35,17 @@
 ## **Lesson 2: Goal of Reinforcement Learning** 
 
 * Describe how rewards relate to the goal of an agent
+  * An action on this time step might yield large reward because the agent of transition into a state that yields low reward. So what looked good in the short-term, might not be the best in the long-term.
 
-* Understand episodes and identify episodic tasks
+* Understand **episodes** and identify **episodic tasks**
+  * Each episode begins independently of how the previous one ended. 
+  * At termination, the agent is reset to a start state. Every episode has a final state which we call the terminal state. We call these **tasks** episodic tasks
+  * Chess game -> a single game of chess would constitute an episode. Each game starts from the same start state with all the pieces reset.
 
 ## **Lesson 3: Continuing Tasks**
 
 * Formulate returns for continuing tasks using discounting
+  * 
 
 * Describe how returns at successive time steps are related to each other
 
