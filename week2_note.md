@@ -1,6 +1,7 @@
 ## **Lesson 1: Introduction to Markov Decision Processes**
 
 * Understand Markov Decision Processes, or MDPs
+  * MDPs formalize the problem of an agent interacting with an environment.
   * Highlight - how badits and MDPs differ:
     * The k-Armed Bandit problem does not account for the fact that different situations call for different actions.
     *  A bandit rabbit would only be concerned about immediate reward and so it would go for the carrot. But a better decision can be made by considering the long-term impact of our decisions.
