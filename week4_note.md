@@ -1,4 +1,4 @@
-**Lesson 1: Policy Evaluation (Prediction)**
+## **Lesson 1: Policy Evaluation (Prediction)**
 * Understand the distinction between policy evaluation and control
   * Policy evaluation is the task of determining the value function for a specific policy. Policy evaluation is the task of determining the state value function v pi for a particular policy pi.
   * Control is the task of finding a policy to obtain as much reward as possible. In other words, **finding a policy which maximizes the value function.** Control is the ultimate goal of reinforcement learning.
@@ -12,7 +12,7 @@
   * we have a procedure we can apply to iteratively refine our estimate of the value function.
 * Apply iterative policy evaluation to compute value functions
 
-**Lesson 2: Policy Iteration (Control)**
+## **Lesson 2: Policy Iteration (Control)**
 * Understand the **policy improvement theorem**
   * the policy improvement theorem tells us that greedified pi policy is a strict improvement, unless the original policy was already optimal.
   * ![image](/IMG/policy_improvement_theorem.png)
@@ -27,10 +27,18 @@
   * ![image](/IMG/policy_iter_code.png)
 * Apply policy iteration to compute optimal policies and optimal value functions
 
-**Lesson 3: Generalized Policy Iteration**
+## **Lesson 3: Generalized Policy Iteration**
 * Understand the framework of generalized policy iteration
+  * Generalized policy iteration unifies classical DP methods, value iteration, and asynchronous DP.
+  * value iteration -> In value iteration, we still sweep over all the states and greedify with respect to the current value function. However, we do not run policy evaluation to completion. We perform just one sweep over all the states. 
 * Outline value iteration, an important example of generalized policy iteration
-Understand the distinction between synchronous and asynchronous dynamic programming methods
-* Describe brute force search as an alternative method for searching for an optimal policy
-* Describe Monte Carlo as an alternative method for learning a value function
+* Understand the distinction between synchronous and asynchronous dynamic programming methods
+  * synchronous -> methods that perform systematic weeps, this can be problematic if the statespace is large. -> every step could take a very long time.
+  * Asynchronous dynamic programming algorithms update a given state many times before another is updated even once. 
+    * In order to guarantee convergence, asynchronous algorithms must continue to update the values of all states.
+    * Asynchronous algorithms can propagate value information quickly through selective updates. Sometimes this can be more efficient than a systematic sweep.
+    * Asynchronous dynamic programming methods give us the freedom to ipdate states in any order.
+
+* Describe **brute force search** as an alternative method for searching for an optimal policy
+* Describe** Monte Carlo** as an alternative method for learning a value function
 * Understand the advantage of Dynamic programming and “bootstrapping” over these alternative strategies for finding the optimal policy
