@@ -40,5 +40,15 @@
     * Asynchronous dynamic programming methods give us the freedom to ipdate states in any order.
 
 * Describe **brute force search** as an alternative method for searching for an optimal policy
+  * This method simply evaluates every possible deterministic policy one at a time, we then pick the one with the highest value. There are a finite number of deterministic policies, and there always exists an optimal deterministic policy. So brute-force search will find the answer eventually.
+  * However, the number of deterministic policies can be huge.
+  * A deterministic policy consists of one action choice per state. So the total number of deterministic policies is exponential in the number of states. Even on a fairly simple problem, this number could be massive, this process could take a very long time. 
 * Describe** Monte Carlo** as an alternative method for learning a value function
-* Understand the advantage of Dynamic programming and “bootstrapping” over these alternative strategies for finding the optimal policy
+  * The procedure is simple, first, we gather a large number of returns under pi and take their average. This will eventually converge to the state value, this is called the Monte Carlo method.
+* Understand the advantage of Dynamic programming and **“bootstrapping” over these alternative strategies** for finding the optimal policy
+  * This process of using the value estimates of successor states to improve our current value estimate is known as bootstrapping. This can be much more efficient than a Monte Carlo method that estimates each value independently.
+  * bootstrapping can save us from performing a huge amount of unnecessary work by exploiting the connection between the value of a state and its possible successors.
+
+
+## Conclusion:
+The key insight of dynamic programming is that we do not have to treat the evaluation of each state as a separate problem. We can use the other value estimates we have already worked so hard to compute.
