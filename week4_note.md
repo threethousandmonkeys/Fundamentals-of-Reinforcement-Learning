@@ -1,6 +1,6 @@
 ## **Lesson 1: Policy Evaluation (Prediction)**
 * Understand the distinction between policy evaluation and control
-  * Policy evaluation is the task of determining the value function for a specific policy. Policy evaluation is the task of determining the state value function v pi for a particular policy pi.
+  * Policy evaluation is the task of determining the state value function V_pi for a specific policy pi. Policy evaluation is the task of determining the state value function v pi for a particular policy pi.
   * Control is the task of finding a policy to obtain as much reward as possible. In other words, **finding a policy which maximizes the value function.** Control is the ultimate goal of reinforcement learning.
   * The goal of the control task is to modify a policy to produce a new one which is strictly better.Control is the task of improving an existing policy.
 * Explain the setting in which dynamic programming can be applied, as well as its limitations
@@ -29,7 +29,8 @@
 
 ## **Lesson 3: Generalized Policy Iteration**
 * Understand the framework of generalized policy iteration
-  * Generalized policy iteration unifies classical DP methods, value iteration, and asynchronous DP.
+  * **We use the term generalized policy iteration (GPI) to refer to the general idea of letting policy-evaluation and policy-improvement processes interact, independent of the granularity and other details of the two processes. **
+  * Generalized policy iteration *unifies* classical DP methods, value iteration, and asynchronous DP.
   * value iteration -> In value iteration, we still sweep over all the states and greedify with respect to the current value function. However, we do not run policy evaluation to completion. We perform just one sweep over all the states. 
 * Outline value iteration, an important example of generalized policy iteration
 * Understand the distinction between synchronous and asynchronous dynamic programming methods
