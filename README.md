@@ -18,11 +18,11 @@
 
 - Course 1: Fundamentals of Reinforcement Learning
 
-  - [Learning Objectives & Notes]()
+  - [Learning Objectives & Notes](https://github.com/threethousandmonkeys/Reinforcement-Learning-Specialization/tree/master/Fundamentals-of-Reinforcement-Learning/Notes)
 
-  - [Bandits and Exploration / Exploitation]()
+  - [Bandits and Exploration / Exploitation](https://github.com/threethousandmonkeys/Reinforcement-Learning-Specialization/blob/master/Fundamentals-of-Reinforcement-Learning/C1M1_Assignment1.ipynb)
   
-  - [Optimal Policies with Dynamic Programming]()
+  - [Optimal Policies with Dynamic Programming](https://github.com/threethousandmonkeys/Reinforcement-Learning-Specialization/blob/master/Fundamentals-of-Reinforcement-Learning/C1M4_Assignment2.ipynb)
 
 - Course 2: Sample-based Learning Methods
 
