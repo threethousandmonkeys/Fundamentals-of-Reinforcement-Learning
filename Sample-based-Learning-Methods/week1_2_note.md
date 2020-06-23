@@ -21,7 +21,11 @@ Example: Blackjack 二十一点！ -> reform this game as an **undiscounted MDP*
     * The sum of the player's cards (12-21)
     *  The card the dealer shows(Ace - 10)
  *  Policy: Stop requesting cards when the player's sun is 20 or 21
-
+* In what situations could off-policy learning be more data efficient that on-policy learning?
+  * Off-policy means using two different policies, one the target policy, to be learned, and another the off-policy to make sure we do also explore for more optimal actions. This can be a preferred option when a more general policy is required. For example if we learn from generated data from a conventional controller or human expert. In short, more real world dynamics situation.
+  * ***Off-polic***y learning could be better when there are lots of different actions that could proof to be ultimately better in the long run, but poor choices short and intermediate term. 
+  * ***On-policy*** learning would not explore and find these (very long term good action sequences) because it only explores short-term but then selects greedily. It would not find a sequence of several poor choices before it pays off, because of the high probability of greedy choices.
+  
 
 #### Lesson 2: Monte Carlo for Control 
 * Estimate action-value functions using Monte Carlo
