@@ -5,13 +5,22 @@
   * 采样越多，找到的解越接近最优解 => As the number of samples increases, the average tends to get closer and closer to the expected return.
   * ![image](IMG/MC_algo.png)
   The Monte Carlo algorithm has to keep track of multiple observed returns
-  * 
+  * MC method can learn directly from interacton, they don't need a model the environments dynamics.
 * Identify problems that can be solved using Monte-Carlo methods
-
-
-
-
-* Use Monte Carlo prediction to estimate the value function for a given policy. 
+  * In some problems we don't know the environment's transition probabilities. => use MC
+  * We dont need to keep a **large model** of the environment
+  * We are estimating the value of an **individual** state independently of the values of other states. HOWEVER, in dynamic programming, the value of each state depends on the values of other states. (*DIFFERENCE*)
+  * The **computation** needed to update the value of each state **doesnt** depend on the size of the MDP ❌-> depends on the length of an episode ✅
+* Use **Monte Carlo prediction** to estimate the value function for a given policy. 
+Example: Blackjack 二十一点！ -> reform this game as an **undiscounted MDP** (assume cards are dealt from a deck with replacement)
+  * where each game of blackjack corresponds to an episode.
+  * Rewards: loss -1, draw 0, win 1
+  * ActionL Hit or Stick
+  * States (*200 in total*):
+    * whether the player has a usable Ace(counted as 11) (yes or no)
+    * The sum of the player's cards (12-21)
+    *  The card the dealer shows(Ace - 10)
+ *  Policy: Stop requesting cards when the player's sun is 20 or 21
 
 
 #### Lesson 2: Monte Carlo for Control 
