@@ -18,13 +18,13 @@
   * the present state is sufficient and remembering earlier states would not improve predictions about the future. 
 
 * Understand the graphical representation of a Markov Decision Process
-![image](/IMG/dynamic_robot.png)
+![image](IMG/dynamic_robot.png)
   
 
 * Explain how many diverse processes can be written in terms of the MDP framework (**flexibility**) 见下面这个
 
 * The MDP framework is **abstract and flexible** and can be applied to many different problems in many different ways. 
-![image](/IMG/dynamic_other_example.png)
+![image](IMG/dynamic_other_example.png)
   * For example, the **time steps** need not refer to fixed intervals of real time; they can refer to arbitrary successive stages of decision making and acting. 
 
 
@@ -49,12 +49,12 @@
   * Episodic tasks break up into episodes. Every episode in an episodic task must end in a terminal state. The next episode begins independently of how the last episode ended.
   * Continuing tasks cannot be broken up into independent episodes. The interaction goes on continually. There are no terminal states.
     * Smart thermostat which regulates the temperature of a building. This can be formulated as a continuing task since the thermostat never stops interacting with the environment. 
- ![image](/IMG/diff.png) 
+ ![image](IMG/diff.png) 
 We can try to sum up all the future rewards as we did for episodic tasks. But now, we're summing over an infinite sequence. -> to formulate the return for continuing tasks!! -> but it's infinte 
 
 * Formulate returns for continuing tasks using **discounting**
   * One solution is to discount future rewards by a factor Gamma called the discount rate. Gamma is at least zero, but less than one. The return formulation can then be modified to include discounting. 
-![image](/IMG/discounting.png)
+![image](IMG/discounting.png)
 The effect of discounting on the return is simple, immediate rewards contribute more to the some. Rewards far into the future contribute less because they are multiplied by Gamma raised to successively larger powers of k. 
 
 * Describe how returns at successive time steps are related to each other
