@@ -29,8 +29,21 @@ Example: Blackjack 二十一点！ -> reform this game as an **undiscounted MDP*
 
 #### Lesson 2: Monte Carlo for Control 
 * Estimate action-value functions using Monte Carlo
+  * We learned the value of a state by averaging sample returns from that state, same as action values.
 * Understand the importance of maintaining exploration in Monte Carlo algorithms 
-* Understand how to use monte carlo methods to implement a GPI algorithm. 
+  *  If we don't ever try the new way, then we couldn't know if it was actually better
+  *  Exploring starts - one way to maintain exploration
+
+* Understand how to use monte carlo methods to implement a **GPI algorithm**
+  * ![image](IMG/GPI_algo.png)
+  * GPI algorithms produce sequences of policies that are at least as good as the policy before them. 
+  * Policy improvement step -> make policy greedy wrt. the agent current action value estimates.
+  * policy evaluation step -> use ***MC estimate*** to estimate action values. 
+  * ![image](IMG/MC_estimination.png)
+    * You use exploring starts so that each episode begins with a randomly selected state and action. 
+    * Then, the agent generates an episode by following his policy, keeping track of the states, actions, and rewards along the way. 
+    * Once the episode is complete, it computes each return starting from the end of the episode. Then, it adds the return to the appropriate list. The list of returns are then averaged to update the action value estimates for each state-action pair. 
+    * This completes the policy evaluation step. After policy evaluation, then do policy improvement. We simply update the policy to take the greedy action with respect to our updated action values. 
 * Apply Monte Carlo with exploring starts to solve an MDP 
 
 #### Lesson 3: Exploration Methods for Monte Carlo 
