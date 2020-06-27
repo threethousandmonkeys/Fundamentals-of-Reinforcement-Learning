@@ -85,6 +85,7 @@ Example: Blackjack 二十一点！ -> reform this game as an **undiscounted MDP*
 * Using samples from a different distribution. 
 * ![image](IMG/ratio_example.png)
 * Understand how to use importance sampling to correct returns
+  * Almost all o↵-policy methods utilize importance sampling, a general technique for estimating expected values under one distribution given samples from another.
 * Understand how to modify the monte carlo prediction algorithm for off-policy learning. 
 
 
