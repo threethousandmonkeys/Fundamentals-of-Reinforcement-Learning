@@ -84,9 +84,6 @@ Example: Blackjack 二十一点！ -> reform this game as an **undiscounted MDP*
 * Use importance sampling to estimate the expected value of a target distribution 见上图公式推导
 * Using samples from a different distribution. 
 * ![image](IMG/ratio_example.png)
-
-
-
 * Understand how to use importance sampling to correct returns
 * Understand how to modify the monte carlo prediction algorithm for off-policy learning. 
 
