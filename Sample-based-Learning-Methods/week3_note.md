@@ -1,7 +1,12 @@
 ## Module 3: Temporal Difference Learning Methods for Control 
 ### Lesson 1: TD for Control 
-* Explain how generalized policy iteration can be used with TD to find improved policies 
+* Define Temporal Difference learning
   * TD learning is a combination of Monte Carlo ideas and dynamic programming (DP) ideas
+  * A way to incrementally estimate the return through **bootstrapping** 
+* Define the Temporal Difference Error
+![image](IMG/TDerror.png)
+We will often see the TD error denoted by delta t
+* Explain how generalized policy iteration can be used with TD to find improved policies 
   * Monte Carlo methods wait until the return following the visit is known, then use that return as a target for V (St)
     * V (St) <-  V (St) + α[G_t - V (St)], where Gt is the actual return following time t, and α is a constant step-size parameter
 * Describe the Sarsa Control algorithm

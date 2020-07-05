@@ -108,4 +108,4 @@ QUIZ:
 7.  Which approach can find an optimal deterministic policy? 
     1.  Exploring starts
     2.  off-policy learning with an epsilon-soft behaviour policy and a deterministic target policy
-
+![image](IMG/20200625223233.png)
