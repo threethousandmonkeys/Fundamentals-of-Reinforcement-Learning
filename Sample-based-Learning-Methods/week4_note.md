@@ -43,6 +43,9 @@
 
 ### Lesson 3: Expected Sarsa 
 * Describe the Expected Sarsa algorithm
+  * Sarsa estimates this expectation by sampling the next date from the environment and the next action from its policy.
+  *  the expected Sarsa algorithm explicitly computes the expectation under its policy, which is more expensive than sampling but has lower variance.
+
 * Describe Expected Sarsa’s behaviour in an example MDP
 * Understand how Expected Sarsa compares to Sarsa control
 * Understand how Expected Sarsa can do off-policy learning without using importance sampling
